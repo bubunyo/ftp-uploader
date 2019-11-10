@@ -1,0 +1,6 @@
+{
+  "generator-rocket-api": {
+    "pm": "yarn",
+    "dialect": "postgres"
+  }
+}

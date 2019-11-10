@@ -1,0 +1,56 @@
+{
+  "name": "naya-labs-assignment",
+  "version": "0.0.0",
+  "description": "Express Api Boilerplate",
+  "main": "dist/server.js",
+  "repository": "",
+  "author": "Bubunyo Nyavor",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run compile && node dist/server.js",
+    "predev": "rimraf ./dist/",
+    "dev": "cross-env NODE_ENV='development' FTP_USER='ibubu' FTP_PASS='-9V4zjfx' FTP_HOST='glivion.tech' nodemon --watch src --exec yarn start",
+    "test": "cross-env NODE_ENV='test' FTP_USER='ibubu' FTP_PASS='-9V4zjfx' FTP_HOST='glivion.tech' jest -i",
+    "test:coverage": "cross-env NODE_ENV='test' FTP_USER='ibubu' FTP_PASS='-9V4zjfx' FTP_HOST='glivion.tech' jest --no-cache --watch --coverage",
+    "compile": "babel --out-dir dist src --source-maps --ignore '**/*.test.js'",
+    "prepublish": "yarn run compile",
+    "postinstall": "yarn run compile",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "basic-ftp": "^4.5.1",
+    "body-parser": "^1.19.0",
+    "connect-busboy": "^0.0.2",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-validation": "^1.0.3",
+    "http-status": "^1.4.0",
+    "joi": "^14.3.1",
+    "method-override": "^3.0.0",
+    "methods": "^1.1.2",
+    "morgan": "^1.9.1",
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-es5": "^0.5.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.1.0",
+    "jest": "^22.0.3",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
